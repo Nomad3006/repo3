@@ -18,7 +18,7 @@
 
 		<div class="container">
 			<div class="line"></div>
-			<h3 class="pt-md tac">Venez à notre rencontre</h3>
+			<h3 class="tac">Venez à notre rencontre</h3>
 			<div class="row">
 				<div class="col-4" id="map">
 					<h2>Besoin d'aide pour trouver la boutique ?</h2>

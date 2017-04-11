@@ -33,6 +33,15 @@
 				<a href="" id="h_cafe">L'histoire de nos cafés <span class="brown">&#8594;</span></a>
 			</div>
 		</header>
+		<section class="tac container" id="promo">
+		<div>
+		<p>Ouverture de nos boutique en ligne et physiques en <span class="brown">mai 2017</span><br>
+			À cette occasion profitez de <br>
+			<span class="brown">5&nbsp;%&nbsp;de&nbsp;remise</span> <br>
+			sur notre site de mai à septembre 2017</p>
+			<a href="#" class="cta">J'en profite</a>
+			</div>
+		</section>
 		<section id="company">
 			<div class="container">
 				<div class="line"></div>
