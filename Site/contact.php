@@ -20,13 +20,13 @@
 			<div class="line"></div>
 			<h3 class="tac">Venez à notre rencontre</h3>
 			<div class="row">
-				<div class="col-4" id="map">
+				<div class="col-md-4" id="map">
 					<h2>Besoin d'aide pour trouver la boutique ?</h2>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1711.3225027542114!2d4.3592176955172395!3d43.8332335441711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b42d08f35e8e03%3A0x926b18ac43a1c009!2s3+Rue+de+la+R%C3%A9publique%2C+30900+N%C3%AEmes!5e0!3m2!1sfr!2sfr!4v1491904930163" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
 					<div>Vous pouvez nous rejoindre en utilisant les lignes 2, 3, 4, 5, 6, 7, 9, 10, 51, et 61
 						<br>En descendant à l'arrêt <strong>Esplanade Feuchères</strong></div>
 				</div>
-				<form class="col-8" action="" method="post" onsubmit="return check(this)">
+				<form class="col-md-8" action="" method="post" onsubmit="return check(this)">
 				<?php
 						if($sent){
 							echo '<h2>'.$reponsemail.'</h2>';
@@ -69,5 +69,6 @@
 		</div>
 		<?php include('footer.php') ?>
 		<script src="js/formCheck.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

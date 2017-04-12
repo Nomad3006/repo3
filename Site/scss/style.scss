@@ -15,6 +15,7 @@ $bg-black : #181818;
 $bg-blue : #baf9ff;
 
 $brown: #feb960;
+$dark-brown: darken($brown,30%);
 $grey: #bbbbbb;
 $grey2: rgba(187, 187, 187, 0.74);
 $black: #232323;
@@ -28,7 +29,7 @@ html{
 	font-size: $font-size-root;
 	font-family: $baseFont !important;
 }
-@media (max-width : 375px){
+@media (max-width : 575px){
 	html{
 		font-size: $font-size-root-responsive;
 	}
@@ -88,7 +89,7 @@ h4{
 	text-align: left;
 }
 
-@media (max-width : 375px){
+@media (max-width : 575px){
 	body{
 		padding-top: 30px;
 	}
@@ -112,6 +113,7 @@ h4{
 
 .grey{color:$grey}
 .brown{color:$brown}
+.dark-brown{color:$dark-brown}
 .white{color:$white}
 .green{color:$green}
 .red, .red p{color:$red}
@@ -196,9 +198,10 @@ header{
 		padding-top: 270px;
 	}
 }
-nav{
+#links{
 	text-transform: uppercase;
 	line-height: 2.5rem;
+	transition: height 0.5s ease;
 	a+a{
 		&:before{
 			content: "\00a0\00a0\00a0\007C\00a0\00a0\00a0";
@@ -254,7 +257,7 @@ nav{
 	font-size: 2.8rem;
 	}
 	.brown{
-		color: darken($brown,30%)
+		color: $dark-brown;
 	}
 	.cta{
 		margin-top: 30px;
@@ -477,7 +480,7 @@ form{
 	margin-bottom: 150px;
 	h2{
 		font-size: 3.2rem;
-		padding-bottom: 30px;
+		padding-bottom: 2rem;
 	}
 	label{
 		color: $brown;
@@ -498,9 +501,10 @@ form{
 
 }
 #map{
+	margin-bottom: 60px;
 	h2{
 		font-size: 2.4rem;
-		padding-bottom:67px;
+		padding-bottom:2.4rem;
 	}
 }
 
@@ -516,9 +520,20 @@ form{
 		&>div{
 			padding-top: 175px;
 		}
-		nav{display: none;}
+		#links{
+			top:58px;
+			position: fixed;
+			background-color: $bg-grey;
+			border-bottom: 2px solid $grey2;
+			a:before{
+				content:"";
+			}
+		}
 		#h_cafe{display: none;}
 		#logo{top: 15px; right: 0;left: 0;bottom: auto}
+	}
+	#alt_header nav{
+		margin-top: 0;
 	}
 	#produits{
 		.corner{
@@ -526,8 +541,12 @@ form{
 		}
 	}
 	#services{
-		background-size: cover;
+		padding-bottom: 0;
+		background-repeat: no-repeat;
 		background-position: center;
+		.cta{
+			margin: 42px auto 22px auto;
+		}
 		article+article{
 			margin-top: 30px;
 		}
@@ -568,20 +587,24 @@ form{
 
 span.menu {
 	position: absolute;
-	left: 170%;
-	top: 7px;
+	left: 140%;
+	top: 2px;
 	font-size: 22px;
 	letter-spacing: 1px;
 	color: $color-burger;
 }
 
 .containerBurger {
-	position: absolute;
+	position: fixed;
 	display: none;
-	top: -12%;
-	left: 10px;
-	width: 130px;
-	height: 40px;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 60px;
+	padding: 8px 30px;
+	z-index: 1000;
+	background-color: $bg-grey;
 }
 
 .containerBurger input {
@@ -766,7 +789,7 @@ span.menu {
 	50% { transform: translateY(-12px); opacity: 1; }
 	51%, 100% { transform: translateY(-12px); opacity: 0; }
 }
-@media (max-width: 375px){
+@media (max-width: 575px){
 	.containerBurger{
 		display: block;
 	}

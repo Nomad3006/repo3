@@ -15,9 +15,10 @@ if(isset($_POST['name'])){
 	   ||!preg_match($regName,$_POST['surname'])
 	   ||!preg_match($regEmail,$_POST['mail'])
 	   ||!preg_match($regTel,$_POST['tel'])
-	   ||!strlen($_POST['mseg'])){
+	   ||!strlen($_POST['msg'])){
 
-		$messagejava='<p>Merci de réactiver votre javascript</p>';}
+		$messagejava='<p>Merci de réactiver votre javascript</p>';
+	}
 
 	else{
 
@@ -36,11 +37,11 @@ if(isset($_POST['name'])){
 		$maildest='palamara.thomas@gmail.com';
 		$sujetdest='Vous avez un mail de votre page contact Cv';
 		$mailmessdest='
-			Salut, Toma <br>
-			Tu as recu un message de ta page contact.
-			'. $_POST['nom'].' veux te contacter <br>
-			Voici son mail : '.$_POST['mail'].' <br>
-			Son message:  '.$_POST['message'];
+			Bonjour, <br>
+			Vous avez recu un message de la page contact de Café des Ours.
+			'. $_POST['name'].' '. $_POST['name'].' veut vous contacter <br>
+			Voici son adresse mail : '.$_POST['mail'].' <br>
+			Son message:  '.$_POST['msg'];
 
 		$maildest2=  $_POST['mail'];
 		$sujetdest2='accusé de réception';
@@ -48,20 +49,16 @@ if(isset($_POST['name'])){
 			Bonjour,'.$_POST['name'].'
 			Nous avons pris en compte votre mail, nous ferons en sorte de vous répondre aussi vite que possible. <br>
 			Voici le message que vous m\'avez transmis lors de votre saisie: <br>
-			Ainsi que votre message : '.$_POST['message'].' <br>
+			Ainsi que votre message : '.$_POST['msg'].' <br>
 			Voici le mail sur lequel nous allons vous répondre <br> <b>'.$_POST['mail'].'<br>
 			Nous vous remercions de l\'attention que vous nous portez. <br>
-			Cordialement, <br>
-			Palamara Thomas.';
+			Cordialement.';
 
 		if((mail($maildest,$sujetdest,$mailmessdest,$headers))&& (mail($maildest2,$sujetdest2,$mailmessdest2,$headers2))){
-			$reponsemail='Félicitation mail envoyé avec succès.';
+			$reponsemail='Félicitation ! Mail envoyé avec succès.';
 			$sent=1;
-			echo $sent;
 		}
 		else{$reponsemail='Une erreur est survenue lors de l\'envoi de votre message veuillez réessayer ultérieurement.';
-			$sent=1;
-			 echo $sent;
 			}
 
 

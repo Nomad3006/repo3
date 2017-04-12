@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+include('session.php')
+
+
+
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Café des ours - Administrateur</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+include('connexion.php');
+$req_event = mysqli_query($id_connect, "SELECT * FROM ours_event");
+$tab_event = mysqli_fetch_assoc($req_event);
+$tab_event = array_map('stripslashes',$tab_event);
+
+
+?><!DOCTYPE html>
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
@@ -12,13 +19,13 @@
 	</head>
 
 	<body>
+		<div class="containerBurger">
+			<input id="click" name="exit" type="checkbox" onclick="handleBurger(this)"/>
+			<label for="click"><span class="burger"></span><span class="menu">Menu</span></label>
+		</div>
 		<header>
 			<div class="container">
 				<h1 class="mb-md">Au <span class="brown">Café des Ours</span>,<br> Nous torréfions le Café et les <span class="brown">Sensations</span></h1>
-				<div class="containerBurger">
-					<input id="click" name="exit" type="checkbox" />
-					<label for="click"><span class="burger"></span><span class="menu">Menu</span></label>
-				</div>
 				<nav id="links">
 					<a href="index.php">Accueil</a>
 					<a href="#">Boutique</a>
@@ -34,12 +41,15 @@
 			</div>
 		</header>
 		<section class="tac container" id="promo">
-		<div>
-		<p>Ouverture de nos boutique en ligne et physiques en <span class="brown">mai 2017</span><br>
-			À cette occasion profitez de <br>
-			<span class="brown">5&nbsp;%&nbsp;de&nbsp;remise</span> <br>
-			sur notre site de mai à septembre 2017</p>
-			<a href="#" class="cta">J'en profite</a>
+			<div style="background-color:<?php echo $tab_event['color'];?>;">
+			<p><?php echo $tab_event['text'];?></p>
+<!--
+				<p>Ouverture de nos boutique en ligne et physiques en <span class="brown">mai 2017</span><br>
+					À cette occasion profitez de <br>
+					<span class="brown">5&nbsp;%&nbsp;de&nbsp;remise</span> <br>
+					sur notre site de mai à septembre 2017</p>
+-->
+				<a href="#" class="cta">J'en profite &#8594;</a>
 			</div>
 		</section>
 		<section id="company">
@@ -65,14 +75,14 @@
 					<article class="col-md-6 pl-md">
 						<div class="line"></div>
 						<h3 class="white tal">L’histoire d’un breuvage Mythique</h3>
-						<p>Le café à une histoire incroyable. </p>
-						<p>De sa découverte hasardeuse et sagace à son statut de deuxièmee produit commercial le plus important en passant par démocratisation en arabie et sa conquete de l’Europe . </p>
-						<p>Vous verrez que le café à traversé l’histoire et à beacoup de choses à vous apprendre.</p>
+						<p>Le café a une histoire incroyable. </p>
+						<p>De sa découverte hasardeuse et sagace à son statut de deuxième produit commercial le plus important en passant par démocratisation en arabie et sa conquete de l’Europe . </p>
+						<p>Vous verrez que le café à traversé l’histoire et à beaucoup de choses à vous apprendre.</p>
 						<div class="row mt-lg">
-							<a href="#" class="col-6">Légende des premiers temps</a>
-							<a href="#" class="col-6">Découverte du café</a>
-							<a href="#" class="col-6">Conquete de l’Europe</a>
-							<a href="#" class="col-6">Le café au 20e siècle</a>
+							<a href="#" class="col-6"><i class="fa-coffee"></i>Légende des premiers temps</a>
+							<a href="#" class="col-6"><i class="fa-coffee"></i>Découverte du café</a>
+							<a href="#" class="col-6"><i class="fa-coffee"></i>Conquete de l’Europe</a>
+							<a href="#" class="col-6"><i class="fa-coffee"></i>Le café au 20e siècle</a>
 						</div>
 						<a href="#" class="mt-lg mb-md cta">L'histoire de nos café &#8594;</a>
 					</article>

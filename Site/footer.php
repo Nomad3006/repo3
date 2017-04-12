@@ -12,12 +12,12 @@
 				<a href="">Nos variétés de café</a>
 				<a href="contact.php">Contact</a>
 			</nav>
-			<div class="col-6 col-md-3">
+			<div class="col-6 col-md-3 text-md-center">
 				<span class="white">Adresse</span>
 				Boutique • Le Café et Ours <br>
 				3, rue de la République <br>30900 Nîmes
 			</div>
-			<div class="col-6 col-md-3">
+			<div class="col-6 col-md-3 text-md-center">
 				<span class="white">Contact</span>
 				<a href="tel:0466112233"></a>Tel : 04 66 11 22 33
 			</div>

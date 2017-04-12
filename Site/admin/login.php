@@ -1,3 +1,31 @@
+<?php
+session_start();
+include('../connexion.php');
+$msg="";
+
+if(isset($_POST['id'])){
+	if(!empty($_POST['id']) && !empty($_POST['pw'])){
+		$_POST = array_map('htmlspecialchars',$_POST);
+		$_POST = array_map('trim',$_POST);
+		$safe_id=mysqli_real_escape_string($id_connect,$_POST['id']);
+		$safe_pw=mysqli_real_escape_string($id_connect,$_POST['pw']);
+		$q_logs=mysqli_query($id_connect,"SELECT id, pw FROM ours_login WHERE id='".$safe_id."' && pw='".sha1($safe_pw)."'");
+		if(mysqli_num_rows($q_logs) == 0){
+			$msg='Identifiant ou mot de passe incorrects';
+		}
+		else{
+			$_SESSION['login']='admin';
+			header('location: index.php');
+		}
+	}
+	else{
+		$msg='Veuillez remplir les champs Identifiant et Mot de passe';
+	}
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,18 +71,19 @@
 							<h3 class="panel-title">Connectez-vous, s'il vous plaît</h3>
 						</div>
 						<div class="panel-body">
-							<form role="form">
+							<form role="form" action="#" method="post">
 								<fieldset>
 									<div class="form-group">
-										<input class="form-control" placeholder="Identifiant" name="email" type="email" autofocus>
+										<input class="form-control" placeholder="Identifiant" name="id" type="text" autofocus>
 									</div>
 									<div class="form-group">
-										<input class="form-control" placeholder="Mot de passe" name="password" type="password" value="">
+										<input class="form-control" placeholder="Mot de passe" name="pw" type="password" value="">
 									</div>
 									<!-- Change this to a button or input when using this as a form -->
-									<a href="index.html" class="btn btn-lg btn-success btn-block">Connexion</a>
+									<button type="submit" id="subButton" class="btn btn-default mt-md">Se connecter</button>
 								</fieldset>
 							</form>
+							<div><?php echo $msg; ?></div>
 						</div>
 					</div>
 				</div>

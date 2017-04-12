@@ -7,11 +7,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.php">Café des ours - Administrateur</a>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+               <a href="index.php?deco=y"> Deconnexion</a>
                 <!-- DECONNEXION -->
             </ul>
             <!-- /.navbar-top-links -->
@@ -52,15 +53,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
+                            <a href="../index.php" target="_blank"><i class="fa fa-files-o fa-fw"></i> Voir le site</a>
                             <!-- /.nav-second-level -->
                         </li>
                     </ul>

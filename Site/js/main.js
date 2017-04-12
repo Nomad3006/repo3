@@ -5,18 +5,10 @@ function expand(x){
 		x.classList.add("expand");
 }
 
-window.onscroll = function(ev) {
-    if (window.scrollY >= document.getElementById('network').offsetHeight) {
-		document.getElementById('main-nav').classList.add('nav-scrolled');
-	}
-	else{
-		document.getElementById('main-nav').classList.remove('nav-scrolled');
-	}
-};
 
 function handleBurger(x){
 	if(x.checked)
-		document.getElementById("links").style.height = "auto";
+		document.getElementById("links").style.height = "252px";
 	else
 		document.getElementById("links").style.height = "0";
 }
